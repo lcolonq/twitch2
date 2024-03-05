@@ -1,0 +1,63 @@
+cabal-version: 3.4
+name: backend
+version: 0.1.0.0
+
+common defaults
+  ghc-options: -Wall
+  default-language: GHC2021
+  default-extensions: NoImplicitPrelude PackageImports LambdaCase MultiWayIf OverloadedStrings OverloadedLists OverloadedRecordDot DuplicateRecordFields RecordWildCards NoFieldSelectors BlockArguments ViewPatterns TypeFamilies DataKinds GADTs
+
+common deps
+  build-depends:
+      base
+    , lcolonq-prelude
+    , aeson
+    , base64
+    , binary
+    , bytestring
+    , containers
+    , data-default-class
+    , directory
+    , errors
+    , filepath
+    , hedis
+    , http-types
+    , http-client
+    , http-client-tls
+    , jose-jwt
+    , lens
+    , lucid2
+    , megaparsec
+    , mtl
+    , network
+    , req
+    , safe-exceptions
+    , scotty
+    , text
+    , time
+    , tomland
+    , transformers
+    , unordered-containers
+    , vector
+    , wai
+    , wai-extra
+    , wai-middleware-static
+    , warp
+    , websockets
+    , wuss
+
+library
+  import: defaults
+  import: deps
+  hs-source-dirs: src
+  exposed-modules:
+    Backend
+    Backend.Utils
+
+executable backend
+  import: defaults
+  import: deps
+  build-depends: backend, optparse-applicative
+  hs-source-dirs:
+    main
+  main-is: Main.hs

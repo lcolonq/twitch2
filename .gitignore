@@ -1,0 +1,5 @@
+.direnv
+dist-newstyle
+node_modules
+backend/backend.toml
+frontend/output/*
