@@ -3,3 +3,5 @@ dist-newstyle
 node_modules
 backend/backend.toml
 frontend/output/*
+.psc-ide-port
+frontend/main.js
